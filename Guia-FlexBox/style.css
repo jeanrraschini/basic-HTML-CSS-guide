@@ -1,0 +1,451 @@
+
+
+/* Estilo globais e estilização do Main-Container */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.noPadding {
+  padding: 0 !important
+}
+
+.noMargin {
+  margin: 0 !important
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  background-image: url('./assets/background.png');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.defaultList {
+  padding-left: 42px;
+  font-size: 18px;
+}
+
+.topicTitle {
+  margin-bottom: 32px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 890px;
+  width: 100%;
+  height: 90%;
+  background-color: #212121;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .3); 
+  border-radius: 0 25px 25px 0;
+  z-index: 1;
+  padding: 25px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.glassBar {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  min-width: 250px;
+  background: inherit;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .3); 
+  border-radius: 25px 0 0 25px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.glassBar:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0; left: 0; right: 0; bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(15px);
+  margin: -20px;
+}
+
+section.contentTopic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  margin-bottom: 75px;
+}
+
+.containerExample,
+.largeContainerExample {
+  height: 180px;
+  width: 100%;
+  color: #212121;
+  position: relative;
+  padding: 25px;
+  border: 1px solid #fff;
+  background-color: #b1b1b0;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 #f9c506;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.largeContainerExample {
+  height: 400px;
+}
+
+.startLabel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-weight: 300;
+}
+
+.endLabel {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-weight: 300;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+a {
+  display: inline-block;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.verticalMediumMargin {
+  margin: 50px 0;
+}
+
+span.lightText {
+  position: absolute;
+}
+
+span.quotes {
+  margin: 50px;
+  display: inline-block;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.axisX {
+  top: 50px;
+}
+
+.axisY {
+  top: 42%;
+  left: 42%;
+}
+
+.axisXArrow {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #212121;
+  position: relative;
+}
+
+.axisXArrow::after,
+.axisXArrow::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #212121;
+  transform: rotate(45deg);
+}
+
+.axisXArrow::after {
+  top: -13px;
+  right: 3px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.axisXArrow::before {
+  top: -13px;
+  left: 3px;
+  border-right: none;
+  border-top: none;
+}
+
+.axisYArrow {
+  width: 1px;
+  height: 100%;
+  border: 1px solid #212121;
+  position: relative;
+}
+
+.axisYArrow::after,
+.axisYArrow::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #212121;
+  transform: rotate(45deg);
+}
+
+.axisYArrow::after {
+  bottom: 3px;
+  right: -13px;
+  border-left: none;
+  border-top: none;
+}
+
+.axisYArrow::before {
+  top: 3px;
+  left: -13px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.itemExample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.itemOne {
+  width: 100px;
+  height: 74px;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 5px 0 #212121;
+  background-color: #212121;
+}
+
+.itemTwo {
+  width: 124px;
+  height: 200px;
+  border: 1px solid #000;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 5px 0 #212121;
+  background-color: #d2d2d2;
+}
+
+.itemThree {
+  width: 150px;
+  height: 50px;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 5px 0 #212121;
+  background-color: #f9c506;
+}
+
+.itemWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.itemWrapper:nth-child(1) {
+  z-index: 1;
+  animation: first-child 9s cubic-bezier(0.82, 0.04, 0.21, 0.96) forwards infinite alternate;
+}
+
+.itemWrapper:nth-child(2) {
+  z-index: 2;
+  animation: second-child 9s cubic-bezier(0.82, 0.04, 0.21, 0.96) forwards infinite alternate;
+}
+
+.itemWrapper:nth-child(3) {
+  z-index: 3;
+  animation: third-child 9s cubic-bezier(0.82, 0.04, 0.21, 0.96) forwards infinite alternate;
+}
+
+@keyframes first-child {
+  10% {
+    transform: translateY(calc(50% - 37px));
+  } 
+  20% {
+    transform: translateY(calc(50% - 37px)) translateX(calc(50% - 162px));
+  } 
+  30% {
+    transform: translateY(calc(100% - 74px)) translateX(calc(50% - 162px));
+  }
+  40% {
+    transform: translateY(calc(100% - 74px)) translateX(calc(15% - 50px));
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateX(calc(50% - 50px));
+  }
+  70% {
+    transform: translateY(calc(50% - 174px)) translateX(calc(50% - 50px));
+  }
+  80% {
+    transform: translateY(0) translateX(calc(50% - 50px));
+  }
+  90%{
+    transform: translateY(calc(50% - 25px)) translateX(calc(100% - 100px));
+  }
+  100% {
+    transform: translateY(calc(100% - 324px)) translateX(calc(100% - 100px));
+  }
+}
+
+@keyframes second-child {
+  0% {
+    transform: translateX(100px);
+  }
+  10%, 20% {
+    transform: translateY(calc(50% - 100px)) translateX(calc(50% - 62px));
+  }
+  30%, 40% {
+    transform: translateY(calc(100% - 200px)) translateX(calc(50% - 62px));
+  }
+  50% {
+    transform: translateY(74px)
+  }
+  60% {
+    transform: translateY(74px) translateX(calc(50% - 62px));
+  }
+  70%, 80%, 90%, 100% {
+    transform: translateY(calc(50% - 100px)) translateX(calc(50% - 62px));
+  }
+  100% {
+    transform: translateY(calc(100% - 250px)) translateX(calc(100% - 124px));
+  }
+}
+
+@keyframes third-child {
+  0% {
+    transform: translateX(224px);
+  }
+  10% {
+    transform: translateY(calc(50% - 25px)) translateX(calc(100% - 150px));
+  }
+  20% {
+    transform: translateY(calc(50% - 25px)) translateX(calc(50% + 62px));
+  }
+  30% {
+    transform: translateY(calc(100% - 50px)) translateX(calc(50% + 62px));
+  }
+  40% {
+    transform: translateY(calc(100% - 50px)) translateX(calc(85% - 75px));
+  }
+  50% {
+    transform: translateY(274px);
+  }
+  60% {
+    transform: translateY(274px) translateX(calc(50% - 75px));
+  }
+  70% {
+    transform: translateY(calc(50% + 100px)) translateX(calc(50% - 75px));
+  }
+  80% {
+    transform: translateY(calc(100% - 50px)) translateX(calc(50% - 75px));
+  }
+  90% {
+    transform: translateY(calc(50% - 25px)) translateX(0)
+  }
+  100% {
+    transform: translateY(calc(100% - 50px)) translateX(calc(100% - 150px));
+  }
+}
+
+.codeAndExampleContainer {
+  flex-wrap: wrap;
+  min-height: 400px;
+  width: 100%;
+  padding: 40px
+}
+
+.codeAndExampleContainer > div {
+  width: 40%;
+  height: 100%;
+}
+
+.codeBlock > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.exampleBlock {
+  height: 100%;
+}
+
+span.observation {
+  font-size: 22px;
+  display: block;
+  margin: 40px 20px;
+  font-weight: 700;
+}
+
+/* Fim da estilização da página e início dos exemplos */
+
+.flexContainer {
+  /* Estilização do Container */
+  height: 100%;
+  min-width: 275px;
+  width: 100%;
+  border: 1px solid #fff;
+  background-color: #b1b1b0;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 #f9c506;
+  overflow: hidden;
+}
+
+.flexContainer > .itemOne,
+.flexContainer > .itemTwo,
+.flexContainer > .itemThree {
+  width: 74px;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+/* Exemplos de uso do FlexBox */
+/* Os itens declarados sem estilização são apeneas para entendimento
+de que não é necessário atribuir propriedades aos elementos filhos (flex-items)
+ para que o posicionamento deles seja modificado */
+
+.flexContainer {
+  display: flex;
+}
+
+.flexContainer > .itemOne {}
+.flexContainer > .itemTwo {}
+.flexContainer > .itemThree {}
+
+

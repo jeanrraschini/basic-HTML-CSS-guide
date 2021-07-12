@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="glassBar">
+    <ul>
+      <li>
+        <a href="#FlexContainer" class="navLink">Flex Container</a>
+      </li>
+      <li>
+        <a href="#FlexItem" class="navLink">Flex Item</a>
+      </li>
+      <li>
+        <a href="#ValoresPadrao" class="navLink">Valores Padrão</a>
+      </li>
+      <li>
+        <a href="#JustifyContent" class="navLink">Justify Content</a>
+      </li>
+    </ul>
+  </div>
+  <div class="contentContainer">
+    <section class="contentTopic" id="FlexContainer">
+      <h2 class="topicTitle">Flex Container</h2>
+      <p class="defaultText">
+        <em>Flex Container</em> é todo bloco que recebe elementos filhos aos quais se aplicarão as propriedades complementares ao <em>display: flex</em>.
+        O <em>Flex Container</em> tem como base de orientação os eixos <em>X</em> e <em>Y</em>.
+      </p>
+      <div class="contentBlock">
+        <div class="containerExample verticalMediumMargin flex align-center justify-center direction-column">
+          <span class="lightText axisX">Eixo <em>X</em></span>
+          <div class="axisXArrow"></div>
+        </div>
+        <div class="containerExample verticalMediumMargin flex justify-center">
+          <span class="lightText axisY">Eixo <em>Y</em></span>
+          <div class="axisYArrow"></div>
+        </div>
+      </div>
+    </section>
+    <section class="contentTopic" id="FlexItem">
+      <h2 class="topicTitle">Flex Item</h2>
+      <p class="defaultText">
+        <em>Flex Item</em> é todo elemento afetado pelas propriedades definidas no elemento pai (no caso, o <em>flex container</em>).
+        O <em>Flex Item</em> tem o valor da sua propriedade <em>display</em> "normalizada" como <em>inline-block</em>. <br />
+        A disposição ou a "forma como os elementos ficarão organizados" são definidas no <em>Flex Container,</em> onde anteriormente definimos
+        o valor da propriedade <em>display: flex</em>. <br />
+        Os <em>Flex items</em> podem ser alinhados e até ordenados de várias maneiras sob efeito das 
+        propriedades de alinhamento e disposição compatíveis com o <em>Flex</em> sendo as mais utilizadas delas:
+        <ul class="defaultList">
+          <li>
+            <em>justify-content</em> - Alinhamento horizontal
+          </li>
+          <li>
+            <em>align-items</em> - Alinhamento vertical
+          </li>
+          <li>
+            <em>flex-direction</em> - Direção do alinhamento (Podendo ser em Linha ou Coluna)
+          </li>
+        </ul>
+      </p>
+      <div class="contentBlock">
+        <div class="largeContainerExample verticalMediumMargin noPadding flex align-center justify-center">
+          Flex Container
+          <div class="itemWrapper">
+            <div class="itemExample itemOne">Flex Item 1</div>
+          </div>
+          <div class="itemWrapper">
+            <div class="itemExample itemTwo">Flex Item 2</div>
+          </div>
+          <div class="itemWrapper">
+            <div class="itemExample itemThree">Flex Item 3</div>
+          </div>
+        </div>
+      </div>
+      <p class="defaultText">
+        <em>É correto afirmar que a propriedade display é uma propriedade que não aplica suas regras ao elemento o qual ela foi atribuída, e sim aos elementos imediatos dentro da hierarquia (filhos) contidos nele</em>
+      </p>
+    </section>
+    <section class="contentTopic" id="ValoresDefault">
+      <h2 class="topicTitle">Valores <em>default</em></h2>
+      <p class="defaultText">
+        Ao atribuir o valor <em>display: flex</em> a um elemento ele automaticamente agrupa todos os elementos filhos (agora <em>Flex Items</em>) no canto <strong>superior esquerdo</strong>,
+         alinhados da esquerda para a direita na ordem em quem estão declarados dentro do container. Por ora vamos guardar que:<br />
+         <span class="quotes"><em>"O canto esquerdo é o início da minha orientação horizontal (eixo X) e a extremidade superior (o topo) é o ponto inicial da minha orientação vertical (eixo Y)"</em></span>
+         Vamos lembrar que esses são os nossos <em>"starts"</em> no conceito de flex. E já que estas extremidades são os <em>"starts"</em> os extremos opostos serão os <em>"ends"</em>, algo nessa linha:
+      </p>
+      <div class="containerExample verticalMediumMargin noPadding flex align-center justify-center">
+        Flex Container
+        <span class="startLabel"><em>Flex Start</em></span>
+        <span class="endLabel"><em>Flex End</em></span>
+      </div>
+      <p class="defaultText">
+        Na prática, o <em>Flex container</em> atribui o valor start para seus eixos e a direção de alinhamento em linha (row) ou "colocando os elementos alinhados lateralmente" fornecendo então este retorno:
+      </p>
+      <div class="codeAndExampleContainer flex justify-evenly align-center">
+        <div class="codeBlock flex align-center justify-center">
+          <img src="./assets/flexex1.png" alt="Exemplo de display: flex">
+        </div>
+        <div class="exampleBlock flex">
+          <div class="flexContainer">
+            <div class="itemOne">Item 1</div>
+            <div class="itemTwo">Item 2</div>
+            <div class="itemThree">Item 3</div>
+          </div>
+        </div>
+      </div>
+      <p class="defaultText">
+        Note que não é necessário aplicar nenhuma propriedade aos elementos filhos (<em>flex-items</em>) para que eles adotem os padrões de
+        posicionamento atribuídos ao elemento pai (<em>flex-container</em>)
+        <span class="observation"><em>Mais uma coisa ...</em></span>
+        Lembra que agora há pouco falamos sobre <em>Valores padrão</em> e aplicação automática dos valores de <em>flex-start</em>, pois bem, a fins de entendimento ... 
+        Se aplicarmos manualmente estes mesmos valores não teremos retorno diferente do atual, pois os <em>valores default</em> já estão aplicados. Exemplo abaixo:
+      </p>
+      <div class="codeAndExampleContainer flex justify-evenly align-center">
+        <div class="codeBlock flex align-center justify-center">
+          <img src="./assets/flexex2.png" alt="Exemplo de display: flex">
+        </div>
+        <div class="exampleBlock flex">
+          <div class="flexContainer">
+            <div class="itemOne">Item 1</div>
+            <div class="itemTwo">Item 2</div>
+            <div class="itemThree">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contentTopic" id="JustifyContent">
+      <h2 class="topicTitle">O Justify Content</h2>
+      <p class="defaultText">
+        Ao atribuir o valor <em>display: flex</em> a um elemento ele automaticamente agrupa todos os elementos filhos (agora <em>Flex Items</em>) no canto <strong>superior esquerdo</strong>,
+         alinhados da esquerda para a direita na ordem em quem estão declarados dentro do container. Por ora vamos guardar que:<br />
+         <span class="quotes"><em>"O canto esquerdo é o início da minha orientação horizontal (eixo X) e a extremidade superior (o topo) é o ponto inicial da minha orientação vertical (eixo Y)"</em></span>
+         Vamos lembrar que esses são os nossos <em>"starts"</em> no conceito de flex. E já que estas extremidades são os <em>"starts"</em> os extremos opostos serão os <em>"ends"</em>, algo nessa linha:
+      </p>
+      <div class="containerExample verticalMediumMargin noPadding flex align-center justify-center">
+        Flex Container
+        <span class="startLabel"><em>Flex Start</em></span>
+        <span class="endLabel"><em>Flex End</em></span>
+      </div>
+      <p class="defaultText">
+        Na prática, o <em>Flex container</em> atribui o valor start para seus eixos e a direção de alinhamento em linha (row) ou "colocando os elementos alinhados lateralmente" fornecendo então este retorno:
+      </p>
+      <div class="codeAndExampleContainer flex justify-evenly align-center">
+        <div class="codeBlock flex align-center justify-center">
+          <img src="./assets/flexex1.png" alt="Exemplo de display: flex">
+        </div>
+        <div class="exampleBlock flex">
+          <div class="flexContainer">
+            <div class="itemOne">Item 1</div>
+            <div class="itemTwo">Item 2</div>
+            <div class="itemThree">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contentTopic">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam in harum necessitatibus ad facilis dolore esse aliquam repudiandae maiores nostrum, repellat aperiam perspiciatis fugiat blanditiis labore, alias voluptatibus pariatur non.
+    </section>
+  </div>
+</body>
+</html>
