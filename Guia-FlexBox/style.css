@@ -30,6 +30,11 @@ body {
   background-size: cover;
 }
 
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
 .defaultList {
   padding-left: 42px;
   font-size: 18px;
@@ -50,7 +55,7 @@ body {
   border-radius: 0 25px 25px 0;
   z-index: 1;
   padding: 25px;
-  overflow: hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -388,9 +393,11 @@ span.quotes {
   padding: 40px
 }
 
-.codeAndExampleContainer > div {
+.codeAndExampleContainer > .codeBlock,
+.codeAndExampleContainer > .exampleBlock {
   width: 40%;
   height: 100%;
+  min-width: 300px;
 }
 
 .codeBlock > img {
@@ -424,15 +431,21 @@ span.observation {
   overflow: hidden;
 }
 
-.flexContainer > .itemOne,
-.flexContainer > .itemTwo,
-.flexContainer > .itemThree {
+.codeAndExampleContainer .itemOne,
+.codeAndExampleContainer .itemTwo,
+.codeAndExampleContainer .itemThree {
   width: 74px;
   height: 74px;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+}
+
+.codeAndExampleContainer .example {
+  width: 100%;
+  height: 100%;
 }
 
 /* Exemplos de uso do FlexBox */
@@ -444,8 +457,26 @@ de que não é necessário atribuir propriedades aos elementos filhos (flex-item
   display: flex;
 }
 
+.flexContainerJustifyEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flexContainerJustifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.flexContainerJustifySpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexContainerJustifySpaceAround {
+  display: flex;
+  justify-content: space-around;
+}
+
 .flexContainer > .itemOne {}
 .flexContainer > .itemTwo {}
 .flexContainer > .itemThree {}
-
-
