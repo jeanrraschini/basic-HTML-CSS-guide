@@ -477,6 +477,21 @@ de que não é necessário atribuir propriedades aos elementos filhos (flex-item
   justify-content: space-around;
 }
 
+.flexContainerJustifySpaceEvenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flexContainerAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.flexContainerAlignEnd {
+  display: flex;
+  align-items: flex-end;
+}
+
 .flexContainer > .itemOne {}
 .flexContainer > .itemTwo {}
 .flexContainer > .itemThree {}

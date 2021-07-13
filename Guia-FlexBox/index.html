@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Guia Básico de FlexBox</title>
   </head>
   <body>
     <div class="glassBar">
@@ -21,6 +21,12 @@
         </li>
         <li>
           <a href="#JustifyContent" class="navLink">Justify Content</a>
+        </li>
+        <li>
+          <a href="#AlignItems" class="navLink">Align Items</a>
+        </li>
+        <li>
+          <a href="#FlexDirection" class="navLink">Flex Direction</a>
         </li>
       </ul>
     </div>
@@ -82,7 +88,7 @@
         </p>
       </section>
       <section class="contentTopic" id="ValoresDefault">
-        <h2 class="topicTitle">Valores <em>default</em></h2>
+        <h2 class="topicTitle">Valores Padrão <em>default</em></h2>
         <p class="defaultText">
           Ao atribuir o valor <em>display: flex</em> a um elemento ele automaticamente agrupa todos os elementos filhos (agora <em>Flex Items</em>) no canto <strong>superior esquerdo</strong>,
           alinhados da esquerda para a direita na ordem em quem estão declarados dentro do container. Por ora vamos guardar que:<br />
@@ -113,7 +119,8 @@
           Note que não é necessário aplicar nenhuma propriedade aos elementos filhos (<em>flex-items</em>) para que eles adotem os padrões de
           posicionamento atribuídos ao elemento pai (<em>flex-container</em>)
           <span class="observation"><em>Mais uma coisa ...</em></span>
-          Lembra que agora há pouco falamos sobre <em>Valores padrão</em> e aplicação automática dos valores de <em>flex-start</em>, pois bem, a fins de entendimento ... 
+          Lembra que agora há pouco falamos sobre <em>Valores padrão</em> e aplicação automática dos valores de <em>flex-start</em> na direçao de uma linha (row) ? <br /> 
+          Pois bem, a fins de entendimento ... 
           Se aplicarmos manualmente estes mesmos valores não teremos retorno diferente do atual, pois os <em>valores default</em> já estão aplicados. Exemplo abaixo:
         </p>
         <div class="codeAndExampleContainer flex justify-evenly align-center">
@@ -206,7 +213,65 @@
               </div>
             </div>
           </li>
+          <li>
+            <em>space-evenly</em> - Distribui os elementos filhos no eixo X dividindo todo espaço horizontal e criando intervalos iguais entre eles mesmos e as extremidades do container, ou seja distribui os elementos filhos uniformemente na área disponível (<em>evenly</em>: uniformemente).
+            <div class="codeAndExampleContainer flex justify-evenly align-center direction-column">
+              <div class="flex align-center justify-center">
+                <img src="./assets/flexex6.png" alt="Exemplo de display: flex">
+              </div>
+              <div class="containerExample flex verticalMediumMargin noPadding">
+                <div class="flexContainerJustifySpaceEvenly example">
+                  <div class="itemOne">Item 1</div>
+                  <div class="itemTwo">Item 2</div>
+                  <div class="itemThree">Item 3</div>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
+      </section>
+      <section class="contentTopic" id="AlignItems">
+        <h2 class="topicTitle">O Align Items</h2>
+        <p class="defaultText">
+          O <em>aling-items</em> atua justamente como o significado da propriedade sugere. Ele <strong>ALINHA</strong> os elementos em pontos específicos do eixo Y (orientação vertical).
+          Existem alguns valores que podem ser atribuídos ao <em>aling-items</em>, mas por ora, vamos focar nos principais que são:
+        </p>
+        <ul class="defaultList">
+          <li>
+            <em>flex-start</em> - Como vimos anteriormente ele agrupa os <em>flex-items</em> no ponto inicial do eixo Y (o canto esquerdo quem olha para a tela. Exemplo na sessão <a href="#ValoresDefault" class="navLink">"Valores Padrão"</a>)
+          </li>
+          <li>
+            <em>center</em> - Centraliza os elementos filhos no eixo Y
+          </li>
+          <li>
+            <em>flex-end</em> - Agrupa os elementos filhos no final do eixo Y
+          </li>
+        </ul>
+        <span class="quotes"><em>Abaixo, exemplos de aplicação de <em>aling-items: center;</em> e <em>aling-items: flex-end;</em> respectivamente:</em></span>
+        <div class="codeAndExampleContainer flex justify-evenly align-center">
+          <div class="codeBlock flex align-center justify-center">
+            <img src="./assets/flexex7.png" alt="Exemplo de display: flex">
+          </div>
+          <div class="exampleBlock flex">
+            <div class="flexContainer flexContainerAlignCenter">
+              <div class="itemOne">Item 1</div>
+              <div class="itemTwo">Item 2</div>
+              <div class="itemThree">Item 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="codeAndExampleContainer flex justify-evenly align-center verticalMediumMargin">
+          <div class="codeBlock flex align-center justify-center">
+            <img src="./assets/flexex7.png" alt="Exemplo de display: flex">
+          </div>
+          <div class="exampleBlock flex">
+            <div class="flexContainer flexContainerAlignEnd">
+              <div class="itemOne">Item 1</div>
+              <div class="itemTwo">Item 2</div>
+              <div class="itemThree">Item 3</div>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="contentTopic">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam in harum necessitatibus ad facilis dolore esse aliquam repudiandae maiores nostrum, repellat aperiam perspiciatis fugiat blanditiis labore, alias voluptatibus pariatur non.
