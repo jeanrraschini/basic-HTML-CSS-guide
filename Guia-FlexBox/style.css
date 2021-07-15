@@ -74,6 +74,10 @@ img {
   overflow: hidden;
 }
 
+.glassBar > ul {
+  list-style: none;
+}
+
 .glassBar:before {
   content: "";
   position: absolute;
@@ -142,6 +146,10 @@ section.contentTopic {
   justify-content: space-evenly;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .direction-column {
   flex-direction: column;
 }
@@ -149,7 +157,17 @@ section.contentTopic {
 a {
   display: inline-block;
   color: white;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+a.navLink:hover {
+  text-decoration: underline;
+}
+
+a.guideLink {
+  color: #f9c506;
+  text-decoration: underline;
 }
 
 .verticalMediumMargin {
@@ -490,6 +508,11 @@ de que não é necessário atribuir propriedades aos elementos filhos (flex-item
 .flexContainerAlignEnd {
   display: flex;
   align-items: flex-end;
+}
+
+.flexContainerDirectionColumn {
+  display: flex;
+  flex-direction: column;
 }
 
 .flexContainer > .itemOne {}

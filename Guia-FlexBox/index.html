@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <title>Guia Básico de FlexBox</title>
   </head>
   <body>
-    <div class="glassBar">
+    <aside class="glassBar">
       <ul>
         <li>
           <a href="#FlexContainer" class="navLink">Flex Container</a>
@@ -28,8 +28,11 @@
         <li>
           <a href="#FlexDirection" class="navLink">Flex Direction</a>
         </li>
+        <li>
+          <a href="#NextSteps" class="navLink">Próximos Passos</a>
+        </li>
       </ul>
-    </div>
+    </aside>
     <div class="contentContainer">
       <section class="contentTopic" id="FlexContainer">
         <h2 class="topicTitle">Flex Container</h2>
@@ -137,7 +140,7 @@
         </div>
       </section>
       <section class="contentTopic" id="JustifyContent">
-        <h2 class="topicTitle">O Justify Content</h2>
+        <h2 class="topicTitle">Justify Content</h2>
         <p class="defaultText">
           Agora que já vimos que o <em>display: flex</em> e como ele age inicialmente nos <em>flex-items</em> vamos começar a entender como funcionam suas propriedades adicionais.
           A primeira delas que veremos é o <em>justify-content</em> <br />
@@ -231,7 +234,7 @@
         </ul>
       </section>
       <section class="contentTopic" id="AlignItems">
-        <h2 class="topicTitle">O Align Items</h2>
+        <h2 class="topicTitle">Align Items</h2>
         <p class="defaultText">
           O <em>aling-items</em> atua justamente como o significado da propriedade sugere. Ele <strong>ALINHA</strong> os elementos em pontos específicos do eixo Y (orientação vertical).
           Existem alguns valores que podem ser atribuídos ao <em>aling-items</em>, mas por ora, vamos focar nos principais que são:
@@ -260,9 +263,10 @@
             </div>
           </div>
         </div>
-        <div class="codeAndExampleContainer flex justify-evenly align-center verticalMediumMargin">
+        <hr>
+        <div class="codeAndExampleContainer flex justify-evenly align-center">
           <div class="codeBlock flex align-center justify-center">
-            <img src="./assets/flexex7.png" alt="Exemplo de display: flex">
+            <img src="./assets/flexex8.png" alt="Exemplo de display: flex">
           </div>
           <div class="exampleBlock flex">
             <div class="flexContainer flexContainerAlignEnd">
@@ -273,8 +277,80 @@
           </div>
         </div>
       </section>
-      <section class="contentTopic">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam in harum necessitatibus ad facilis dolore esse aliquam repudiandae maiores nostrum, repellat aperiam perspiciatis fugiat blanditiis labore, alias voluptatibus pariatur non.
+      <section class="contentTopic" id="FlexDirection">
+        <h2 class="topicTitle">Flex Direction</h2>
+        <p class="defaultText">
+          Anteriormente vimos que por padrão a propriedade flex agrupa os elementos filhos no ponto <em>start</em> dos eixos X e Y, na direção de linha (row). Com
+          o <em>flex-direction</em> temos acesso a direção de alinhamento dos elementos, linha, coluna, linha-reversa, etc.<br/>
+          Por ora vamos focar apenas na linha (row) que já é o valor <em>default</em> do flex (que já vimos acima) e agora vamos entender um pouco melhor sobre o comportamento
+          do alinhamento em coluna (<em>column</em>). <br />
+          Basicamente o que o alinhamento em coluna dá um "tombo" nos eixos dentro do container, como se os eixos ficassem invertidos, apesar dos pontos <em>starts, center e end</em> permanecerem os mesmos.
+          <br />
+          Por exemplo:
+        </p>
+        <div class="codeAndExampleContainer flex justify-evenly align-center">
+          <div class="codeBlock flex align-center justify-center">
+            <img src="./assets/flexex9.png" alt="Exemplo de display: flex">
+          </div>
+          <div class="exampleBlock flex">
+            <div class="flexContainer flexContainerDirectionColumn">
+              <div class="itemOne">Item 1</div>
+              <div class="itemTwo">Item 2</div>
+              <div class="itemThree">Item 3</div>
+            </div>
+          </div>
+        </div>
+        <p class="defaultText">E por que não simplesmente pensar que agora os elementos estão <em>"empilhados ao invés de alinhados"?</em><br /></p>
+        <span class="quotes"><em>- Simples, porque não estão! :S</em></span>
+        <p class="defaultText">Quando um conteiner alinha os elementos na direção de coluna as orientações dos eixos também são afetadas, tanto que a propriedade <em>justify-content</em> que antes referenciava o alinhamento horizontal agora tem um comportamento vertical e,
+         a propriedade <em>align-items</em> que antes agrupava os elementos em pontos verticais, agora os agrupa na horizontal, ou seja ... o comportamento das propriedades é o mesmo, contudo é como se seus eixos de orientção tivessem sido invertidos. <br />
+         Na prática é mais simples do que parece, vamos ver uns exemplos abaixo:
+        </p>
+        <div class="codeAndExampleContainer flex justify-evenly align-center">
+          <div class="codeBlock flex align-center justify-center">
+            <img src="./assets/flexex10.png" alt="Exemplo de display: flex">
+          </div>
+          <div class="exampleBlock flex">
+            <div class="flexContainer flexContainerDirectionColumn justify-between">
+              <div class="itemOne">Item 1</div>
+              <div class="itemTwo">Item 2</div>
+              <div class="itemThree">Item 3</div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="codeAndExampleContainer flex justify-evenly align-center">
+          <div class="codeBlock flex align-center justify-center">
+            <img src="./assets/flexex11.png" alt="Exemplo de display: flex">
+          </div>
+          <div class="exampleBlock flex">
+            <div class="flexContainer flexContainerDirectionColumn align-center">
+              <div class="itemOne">Item 1</div>
+              <div class="itemTwo">Item 2</div>
+              <div class="itemThree">Item 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contentTopic" id="NextSteps">
+        <h2 class="topicTitle">Próximos passos</h2>
+        <p class="defaultText">
+          Ainda existem várias outras propriedades adicionais que atuam em conjunto do <em>display: flex</em>, mas por enquanto este guia tratará 
+          "apenas" destas que foram abordadas ... <br />
+          Combinando estas propriedades que abordamos já será possível ter uma série resultados diferentes, contudo ainda existem vários guias, artigos, vídeos, etc. que se aprofundam ainda mais nos conceitos <em>flex</em> caso você queira se
+          aprofundar no assunto, seguem algumas recomendações de conteúdo que serviram para estudo e embasamento para este guia:
+        </p>
+        <ul class="defaultList">
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="guideLink" target="_blank">Guia Completo de FlexBox da CSS TRICKS.</a>
+          </li>
+          <li>
+            <a href="http://www.flexboxdefense.com/" class="guideLink" target="_blank">Jogo FlexBox defense</a> - Aplica regras de FlexBox dentro do contexto de um minigame com exeplos práticos.
+          </li>
+          <li>
+            <a href="https://flexboxfroggy.com/" class="guideLink" target="_blank">Jogo FlexBox Froggy</a> - Mesma abordagem do <em>FlexBox defense</em> com uma quantidade maior de exercícios e um visual mais agradável
+          </li>
+        </ul>
       </section>
     </div>
   </body>
